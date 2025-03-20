@@ -5,23 +5,24 @@ export interface User {
     avatarUrl: string;
   }
   
-  export interface Comment {
-    id: string;
-    userId: string;
-    content: string;
-    timestamp: string;
-  }
-  
-  export interface Post {
-    id: string;
-    userId: string;
-    content: string;
-    timestamp: string;
-    comments: Comment[];
-    imageUrl: string;
-  }
-  
-  export interface ApiResponse {
-    users: User[];
-    posts: Post[];
-  }
+export interface Comment {
+  id: number;
+  postid: number;
+  content: string;
+}
+
+export interface Post {
+  id: number; 
+  userId: number;
+  content: string;
+  timestamp?: string; 
+  comments?: string;  
+  imageUrl?: string;  
+}
+
+
+export interface ApiResponse {
+  users: User[];
+  posts: Post[];
+  comments: Comment[]; 
+}
